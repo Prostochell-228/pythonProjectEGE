@@ -1,0 +1,1 @@
+print(max([len(line) for line in open('2518.txt').readline().replace("D", " ").split(" ")]))

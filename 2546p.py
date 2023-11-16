@@ -1,0 +1,11 @@
+f = open('2546.txt')
+a = f.readline()
+a = a.replace("KOT","_")
+a = a.replace("S"," ")
+a = a.replace("T"," ")
+a = a.replace("O"," ")
+a = a.replace("C"," ")
+a = a.replace("K"," ")
+a = a.split(" ")
+print(len(max(a)))
+
