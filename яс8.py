@@ -8,6 +8,6 @@ for N in range(200):
     else:
         b = b + bin(N5)[2:]
     if b[-1]==0:
-        b = b[1:]
+        b = b[1 :]
     R = int(b, 2)
     if R > 213: print(R); break
