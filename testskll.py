@@ -103,3 +103,26 @@ def r5(n):
     if n in (1, 2):
         return 1
     return r5(n - 1) + r5(n - 2)
+
+
+# -------------------------------
+
+def r6(n):
+    if n <= 1:
+        return 1
+    return (n * r6(n - 1))
+
+
+
+
+
+def r7(n):
+    if (len(n) == 0):
+        return 0
+    return n[0] + r7(n[1:])
+
+
+def r8(x,y):
+    if x==y: print(min(x,y))
+    elif x>y: r8(x-y, y)
+    else: r8(x, y-x)
