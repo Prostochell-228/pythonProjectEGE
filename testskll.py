@@ -89,11 +89,17 @@ def r3(n, b):
 
 
 l = []
+
+
 def r4(n):
     if (n == 0):
         return l
     dig = n % 10
     l.append(dig)
     r4(n // 10)
-r4(11)
-print(sum(l))
+
+
+def r5(n):
+    if n in (1, 2):
+        return 1
+    return r5(n - 1) + r5(n - 2)
