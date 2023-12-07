@@ -1,5 +1,6 @@
 import itertools
 import sys
+
 sys.setrecursionlimit(10000)
 i = itertools.product('КОМПЕГЭ', repeat=6, )
 s = 0
@@ -39,10 +40,37 @@ def F(n):
         return 1
     elif n > 1:
         return n * F(n - 2)
-print(F(2023)/F(2019))
 
 
+print(F(2023) / F(2019))
+
+k = []
+
+
+def tree(n):
+    res = ''
+    while n > 0:
+        res += str(n % 3)
+        n = n // 3
+    return res[::-1]
+
+
+for i in range(100, 1001):
+    j = tree(i)
+    if j == j[::-1]:
+        k.append(int(j, 3))
+
+ll = []
+s = 0
 f = open('VAR3-17.txt')
 a = [int(x) for x in f]
-#for i in range(len(a)-1):
-#    if str(abs(a[i]))
+b = a.copy()
+b = sorted(b)[::-1]
+for i in b:
+    if i in k:
+        ll.append(i)
+print(max(ll), ll)
+for i in range(len(a) - 1):
+    if len(str(abs(a[i]))) == 4 ^ len(str(abs(a[i + 1]))) == 4 and (a[i] ** 2 + a[i + 1] ** 2) % max(ll) == 0:
+        s += 1
+print(s)
