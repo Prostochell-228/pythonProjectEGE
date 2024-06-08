@@ -1,6 +1,6 @@
 def F(x, y, h):
-    if x + y >= 123 and h == 4: return True
-    if x + y < 123 and h < 4:
+    if x + y >= 123 and h == 3: return True
+    if x + y < 123 and h < 3:
         a = F(x + 1, y, h + 1), F(x, y + 1, h + 1), F(x * 2, y, h + 1), F(x, y * 2, h + 1)
         if h % 2 == 0: return any(a)
         if h % 2 != 0: return all(a)
